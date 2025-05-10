@@ -48,3 +48,5 @@ npm install axios
 npm install react-bootstrap
 npm install react-router-dom
 npm install @reduxjs/toolkit react-redux
+npm i @smastrom/react-rating
+npm i @tanstack/react-query
