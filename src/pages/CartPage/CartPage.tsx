@@ -1,5 +1,6 @@
 import NavBar from '../../components/NavBar/NavBar'
 import { useCart } from '../../context/CartContext'
+import Counter from '../../components/redux/counter'
 import './CartPage.css'
 
 //Passing in cartItems, remove, and clear functions under useCart function
@@ -8,16 +9,17 @@ const CartPage = () => {
 
 
 //Increasing total by the price and quantity of all items in cart
-let total = 0;
-for (const item of cartItems) {
-  total += item.price * item.quantity;
-}
+  let total = 0;
+  for (const item of cartItems) {
+    total += item.price * item.quantity;
+  }
 
   return (
     <div>
       <h1 className='shoppingCart'> Products Shopping Cart</h1>
       {/* Setting webpage navigation to toggle between home page and cart */}
             <NavBar/>
+
           <h2>Current Shopping Cart:</h2>
           {/* Creating clearCart function to clearCart from CartContext dispatch action through useCart import */}
         <div>
@@ -35,8 +37,9 @@ for (const item of cartItems) {
             </div>
           ))}
 
-      {/* Using total method to show current total price for all items in cart */}
+      {/* Using total method to show current total price for all items in cart */}.
       <h4>Total: ${total}</h4>
+      <Counter/>
     </div>
   )
 }
